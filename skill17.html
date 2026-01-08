@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- ✅ Fix #1: Viewport Meta Tag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Responsive Cards Layout</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        /* Container */
+        .container {
+            padding: 20px; /* mobile-friendly padding */
+        }
+
+        /* Cards wrapper */
+        .cards {
+            display: flex;
+            flex-direction: column; /* stack on mobile */
+            gap: 20px;
+        }
+
+        /* Individual card */
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+
+            /* ✅ Fix #2: Flexible width */
+            width: 100%;
+        }
+
+        /* ✅ Fix #3 & #4: Media query for larger screens */
+        @media (min-width: 768px) {
+
+            .container {
+                padding: 40px; /* larger padding on desktop */
+            }
+
+            .cards {
+                flex-direction: row; /* side-by-side on desktop */
+            }
+
+            .card {
+                flex: 1; /* cards grow evenly */
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Responsive Cards</h1>
+
+    <div class="cards">
+        <div class="card">
+            <h2>Card One</h2>
+            <p>This card adjusts to screen size.</p>
+        </div>
+
+        <div class="card">
+            <h2>Card Two</h2>
+            <p>Cards stack on mobile and align on desktop.</p>
+        </div>
+
+        <div class="card">
+            <h2>Card Three</h2>
+            <p>No fixed widths anymore.</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

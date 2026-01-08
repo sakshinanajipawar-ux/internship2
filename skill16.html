@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Simple Webpage</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+            padding: 40px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-bottom: 30px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            font-size: 18px;
+            margin: 8px 0;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Language Toggle Button -->
+<button onclick="toggleLanguage()">Switch Language</button>
+
+<!-- Content -->
+<h1 id="name">My Name</h1>
+
+<p id="welcome">Welcome to my webpage!</p>
+
+<h2 id="hobbyTitle">My Hobbies</h2>
+
+<ul>
+    <li id="hobby1">Reading</li>
+    <li id="hobby2">Music</li>
+    <li id="hobby3">Traveling</li>
+</ul>
+
+<script>
+    let isEnglish = true;
+
+    function toggleLanguage() {
+        if (isEnglish) {
+            // Switch to Spanish
+            document.getElementById("name").textContent = "Mi Nombre";
+            document.getElementById("welcome").textContent = "¡Bienvenido a mi página web!";
+            document.getElementById("hobbyTitle").textContent = "Mis Pasatiempos";
+            document.getElementById("hobby1").textContent = "Leer";
+            document.getElementById("hobby2").textContent = "Música";
+            document.getElementById("hobby3").textContent = "Viajar";
+        } else {
+            // Switch back to English
+            document.getElementById("name").textContent = "My Name";
+            document.getElementById("welcome").textContent = "Welcome to my webpage!";
+            document.getElementById("hobbyTitle").textContent = "My Hobbies";
+            document.getElementById("hobby1").textContent = "Reading";
+            document.getElementById("hobby2").textContent = "Music";
+            document.getElementById("hobby3").textContent = "Traveling";
+        }
+
+        isEnglish = !isEnglish;
+    }
+</script>
+
+</body>
+</html>
